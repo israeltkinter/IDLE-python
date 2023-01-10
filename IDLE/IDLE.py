@@ -270,6 +270,7 @@ class Ui_MainWindow(object):
         try:
             with open(self.path3[0], "r", encoding="UTF-8") as file:
                 read = file.read()
+                self.textEdit.textChanged.disconnect(self.add_indent)
                 self.textEdit.setText(read)
                 self.set_file_path(self.path3[0])
                 self.MainWindow.setWindowTitle(f"IDLE Python - {self.path_window}")
